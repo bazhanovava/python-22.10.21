@@ -1,0 +1,70 @@
+Задача 1
+def f(a,n):
+    a = a.split(' ')
+    m = len(a)
+    a1 = []
+    for i in range(1,m):
+        if int(a[i]) > n:
+            l = a[i]
+            a1.append(l)
+    return a1
+print('Введите строчку чисел через пробел')
+a = input()
+print('Введите число')
+n = int(input())
+print(f(a,n))
+
+Задача 2
+a = []
+print('Введите три числа через пробел три раза')
+for i in range(1,4):
+    s = input()
+    s = s.split(' ')
+    for j in range(3):
+        a.append(int(s[j]))
+if a[0] + a[1] + a[2] == a[3] + a[4] + a[5] == a[6] + a[7] + a[8] \
+    == a[0] + a[3] + a[6] == a[1] + a[4] + a[7] == a[2] + a[5] + a[8] \
+    == a[0] + a[4] + a[8] == a[6] + a[4] + a[2]:
+    print('квадрат правильный')
+else:
+    print('квадрат неправильный')
+
+Задача 3
+a = input()
+a = a.split(' ')
+te = []
+for i in range(len(a)):
+    d = a[i]
+    d = list(d)
+    d = d[0]
+    te.append(d)
+    te.append('. ')
+te = ''.join(te)
+print(te)
+
+Задача 5
+def glas(a):
+    spis = 'а, о, и, е, ё, э, ы, у, ю, я'
+    spis = spis.split(', ')
+    a = list(a)
+    kol = 0
+    for i in range(len(a)):
+        if a[i] in spis:
+            kol += 1
+    return kol
+    
+def sogl(a):
+    spis = 'б, в, г, д, ж, з, й, к, л, м, н, п, р, с, т, ф, х, ц, ч, ш, щ'
+    spis = spis.split(', ')
+    a = list(a)
+    kol = 0
+    for i in range(len(a)):
+        if a[i] in spis:
+            kol += 1
+    return kol
+a = input('Введите строку: ')
+fun = int(input('Введите 0, если хотите узнать кол-во гласных русских букв в строке и 1, если согласных: '))
+if fun == 0:
+    print(glas(a))
+elif fun == 1:
+    print(sogl(a))
